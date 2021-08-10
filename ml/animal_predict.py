@@ -5,7 +5,6 @@ from PIL import Image
 import glob
 from google.cloud.storage import bucket, client
 import numpy as np
-import tensorflow
 import tensorflow as tf
 from google.cloud import storage as gcs
 from google.oauth2 import service_account
@@ -96,4 +95,4 @@ def return_predict():
 # 	return request_data["file"]
 
 if __name__ == '__main__':
-	app.run(host='127.0.0.1', port=8888)
+	app.run(host='127.0.0.1', port=8888, debug=True)
