@@ -52,11 +52,11 @@ def return_predict():
 @app.route('/', methods=['POST'])
 def return_predict():
 	# Variables
-	gcs_project_id = 'cka-project-318105'
-	gcs_key_path = '/data/ml/key/cka-project-318105-d0bd042b7921.json'
-	gcs_bucket_name = 'yu1-demo'
+	gcs_project_id = 'direct-plateau-322502'
+	gcs_key_path = '/config/cka-project-318105-d0bd042b7921.json'
+	gcs_bucket_name = 'yu1-ml-demo'
 	class_label = ('cat', 'crow', 'horse', 'lion', 'turtle')
-	model_path = '/data/ml/models/model.h5'
+	model_path = '/model.h5'
 	model = tf.keras.models.load_model(model_path)
 	X = []
 
@@ -96,4 +96,4 @@ def return_predict():
 # 	return request_data["file"]
 
 if __name__ == '__main__':
-	app.run(host='127.0.0.1', port=8888, debug=True)
+	app.run(host='127.0.0.1', port=80)

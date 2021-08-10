@@ -1,8 +1,8 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+# FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+FROM python:3.7.11
 
 COPY requirements.txt /tmp/
-VOLUME /data
+VOLUME /data/models
 
-RUN pip install --no-cache-dir -r /tmp/requirements.txt && \
-  curl -L https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64 -o /usr/local/bin/stern && \
-  chmod 755 /usr/local/bin/stern
+RUN curl -OL https://storage.googleapis.com/yu1-ml-demo/model.h5 && \
+	pip install --no-cache-dir -r /tmp/requirements.txt
