@@ -1,0 +1,7 @@
+pandas
+flask
+keras
+pillow
+requests
+google-cloud-storage
+tensorflow=1.15
