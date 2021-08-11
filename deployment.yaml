@@ -2,21 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ml-app-2
+  name: ml-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ml-app-2
+      app: ml-app
   template:
     metadata:
       labels:
-        app: ml-app-2
+        app: ml-app
     spec:
       containers:
-      - name: ml-app-2
-        # image: public.ecr.aws/q7x2l2d4/ml-demo:0.3
-        image: asia.gcr.io/direct-plateau-322502/ml-app:0798ace1f3a4498882eb72c54c5f48d156e5173a
+      - name: ml-app
+        image: asia.gcr.io/direct-plateau-322502/ml-app:latest
         ports:
         - containerPort: 80
         command: ["/bin/sh", "-c"]
@@ -40,11 +39,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ml-lb-2
+  name: ml-lb
 spec:
   type: LoadBalancer
   selector:
-    app: ml-app-2
+    app: ml-app
   ports:
   - name: "http"
     protocol: "TCP"
