@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ml-app
-        image: public.ecr.aws/q7x2l2d4/ml-demo:latest
+        image: asia.gcr.io/direct-plateau-322502/ml-app:0798ace1f3a4498882eb72c54c5f48d156e5173a
         ports:
         - containerPort: 80
         command: ["/bin/sh", "-c"]
