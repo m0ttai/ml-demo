@@ -9,4 +9,4 @@ steps:
 
 ### Replace the container image tag ###
 - name: "ubuntu"
-  args: ["bash", "-c", "'sed -i.bk s/latest/${COMMINT_SHA}/g deployment.yaml'"]
+  args: ["bash", "-c", "'sed -i.bk s/latest/${COMMIT_SHA}/g deployment.yaml'"]
