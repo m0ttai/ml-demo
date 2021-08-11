@@ -9,7 +9,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - build
-    - if
+    - -f
     - Dockerfile
     - --tag
     - asia.gcr.io/$PROJECT_ID/ml-app:$TAG_NAME
