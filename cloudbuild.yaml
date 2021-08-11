@@ -19,6 +19,6 @@ steps:
   - |
     sed "s/latest/${COMMIT_SHA}/g" deployment.yaml > apply.yaml
 
-- name: "gcr.io/cloud-builder/gcloud"
+- name: "gcr.io/cloud-builders/gcloud"
   entrypoint: /bin/bash
   args: ["-c", "cat apply.yaml"]
