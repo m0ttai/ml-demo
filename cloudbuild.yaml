@@ -1,4 +1,11 @@
 steps:
+- name: 'ubuntu'
+  args:
+    - bash
+    - -c
+    - 'rm -rf .dockeringnore && echo $TAG_NAME'
+  id: 'rm-dockerignore'
+
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - build
@@ -7,6 +14,7 @@ steps:
     - --tag
     - asia.gcr.io/$PROJECT_ID/ml-app:$TAG_NAME
     - .
+  waitFor: ['rm-dockerignore']
 
 - name: 'gcr.io/cloud-builders/docker'
   args:
