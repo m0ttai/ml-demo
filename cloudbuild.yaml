@@ -12,4 +12,4 @@ steps:
 #   args: ["bash", "-c", "'sed -i.bk s/latest/${COMMIT_SHA}/g deployment.yaml'"]
 
 - name: "ubuntu"
-  args: ["bash", "-c", "'ls -lR'"]
+  args: ["bash", "-c", "'find / -name deployment.yaml'"]
