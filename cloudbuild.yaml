@@ -12,5 +12,5 @@ steps:
 #   args: ["bash", "-c", "'sed -i.bk s/latest/${COMMIT_SHA}/g deployment.yaml'"]
 - name: "gcr.io/cloud-builders/gcloud"
   entrypoint: /bin/bash
-  args: ["-c", "'sed \"s/latest/${COMMIT_SHA}/g\" deployment.yaml'"]
+  args: ["-c", "'sed \"s/latest/${COMMIT_SHA}/g\" ./deployment.yaml'"]
   # args: ["-c", "ls -lR"]
