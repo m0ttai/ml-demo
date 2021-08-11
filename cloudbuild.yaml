@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - build
+    - if
+    - Dockerfile
+    - --tag
+    - asia.gcr.io/$PROJECT_ID/ml-app:$TAG_NAME
+    - .
+
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - push
+    - asia.gcr.io/$PROJECT_ID/ml-app:$TAG_NAME
