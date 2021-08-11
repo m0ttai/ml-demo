@@ -1,6 +1,12 @@
 steps:
+### Build the container image ###
 - name: "gcr.io/cloud-builders/docker"
   args: ["build", "-f", "Dockerfile", "-t", "asia.gcr.io/${PROJECT_ID}/ml-app:${COMMIT_SHA}", "."]
 
+### Push the container image to GCR ###
 - name: "gcr.io/cloud-builders/docker"
   args: ["push", "asia.gcr.io/$PROJECT_ID/ml-app:${COMMIT_SHA}"]
+
+### Replace the container image tag ###
+- name: "ubuntu"
+  args: ["bash", "-c", "'sed -i.bk s/latest/${COMMINT_SHA}/g deployment.yaml'"]
