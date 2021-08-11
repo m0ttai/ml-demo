@@ -13,4 +13,4 @@ steps:
 - name: "gcr.io/cloud-builders/gcloud"
   entrypoint: /bin/bash
   # args: ["-c", "'sed \"s/latest/${COMMIT_SHA}/g\" deployment.yaml > apply.yaml'"]
-  args: ["pwd"]
+  args: ["-c", "pwd"]
